@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { addToPastes } from '../redux/pasteSlice'
 import { updateToPastes } from '../redux/pasteSlice'
+import toast from "react-hot-toast"
 
 const Home = () => {
     const[title, setTitle] = useState('')
@@ -65,7 +66,12 @@ const Home = () => {
             <div class="w-[13px] h-[13px] rounded-full flex items-center justify-center p-[1px] overflow-hidden bg-[rgb(254,188,46)]"></div>
             <div class="w-[13px] h-[13px] rounded-full flex items-center justify-center p-[1px] overflow-hidden bg-[rgb(45,200,66)]"></div>
           </div>
-        <button id='copyBtn'  class="absolute right-0 bg-transparent">
+        <button id='copyBtn'  
+                class="absolute right-0 bg-transparent" 
+                onClick={() => {
+                      navigator.clipboard.writeText(value)
+                      toast.success("Copied!")
+                }}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"
