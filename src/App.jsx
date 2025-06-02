@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -37,9 +37,12 @@ const router = createBrowserRouter(
 function App() {
 
   return (
-    <div>
-      <RouterProvider router={router}/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Pastes />} />
+        <Route path="/pastes/:id" element={<ViewPaste />} />
+      </Routes>
+    </Router>
   )
 }
 
