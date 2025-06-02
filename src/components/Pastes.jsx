@@ -80,7 +80,7 @@ const Pastes = () => {
                       title="Share"
                       onClick={() => {
                         setShowShare(true)
-                        setShareLink(`http://localhost:5173/pastes/${paste._id}`)
+                        setShareLink(`https://log-it-pi.vercel.app/pastes/${paste._id}`)
                       }}
                     >
                       <TbShare className="w-5 h-5 hover:text-[rgb(255,196,78)]" />
